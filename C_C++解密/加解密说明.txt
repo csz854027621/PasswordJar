@@ -1,0 +1,23 @@
+windows
+
+java -agentpath:D:\Desktop\Debug\Debug\FeByteCodeEncryptor.dll -cp demo2-0.0.1_encrypted.jar com.csz.Application    
+                                         dll 位置                                                                             加密后的jar                         启动类
+生成 dll文件   https://blog.csdn.net/weixin_39747279/article/details/90214044
+
+
+
+
+
+linux 系统下
+
+/etc/alternatives/java_sdk/include    //linux系统下的 jdk  .h路径
+
+/etc/alternatives/java_sdk/include/linux   
+
+
+g++ com_seaboat_bytecode_ByteCodeEncryptor.cpp -I /etc/alternatives/java_sdk/include  -I /etc/alternatives/java_sdk/include/linux   -fPIC -shared -o libtest.so    生成so文件   linux环境下生成
+
+java -agentpath:/usr/local/java/UserJar/libtest.so -cp demo2-0.0.1_encrypted.jar     com.csz.Application        jar 启动 
+                                                so位置                                      加密后的jar                              启动类
+ 
+
